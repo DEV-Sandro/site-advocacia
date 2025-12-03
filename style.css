@@ -22,9 +22,9 @@ ul { list-style: none; }
 a { text-decoration: none; color: inherit; }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
     width: 100%;
 }
 
@@ -34,17 +34,29 @@ a { text-decoration: none; color: inherit; }
 .fade-in-up { animation: fadeInUp 1.2s ease-out; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-/* --- HEADER --- */
+/* --- CONFIGURAÇÃO DO HERO (TOPO) - AJUSTADO --- */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('fundo-advocacia.jpg');
-    background-size: cover;
-    background-position: center;
+    /* Gradiente escuro sobre a foto para leitura */
+    background: linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.75)), 
+                url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2000&auto=format&fit=crop');
+    
+    background-size: cover;          
+    background-position: center;     
+    background-attachment: fixed;    /* Efeito Parallax */
+    
     color: #fff;
-    min-height: 90vh; /* Ocupa quase toda tela inicial */
+    
+    /* ALTERADO: De 90vh para 70vh (ocupa 70% da altura da tela) */
+    min-height: 60vh; 
+    
+    /* Centraliza o conteúdo verticalmente no novo tamanho */
     display: flex;
     flex-direction: column;
+    justify-content: center; 
+    
     border-bottom: 5px solid var(--gold);
     position: relative;
+    padding: 50px 0; /* Espaço extra para respiro */
 }
 
 .navbar {
@@ -107,10 +119,11 @@ section { padding: 80px 0; }
 .titulo-praticas { margin-bottom: 50px; border-left: 4px solid var(--gold); padding-left: 20px; }
 .titulo-praticas h2 { font-size: 3rem; color: #333; }
 
+/* --- CARDS COM CORES ORIGINAIS (VOLTANDO AO COLORIDO) --- */
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0; /* Design colado */
+    gap: 0;
 }
 
 .card {
@@ -121,16 +134,39 @@ section { padding: 80px 0; }
     justify-content: center;
     position: relative;
     transition: 0.3s;
+    /* Sem borda aqui para ficar chapado como na imagem original */
 }
-.card:hover { transform: translateY(-5px); z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-.card-icon { font-size: 2rem; opacity: 0.4; margin-bottom: 20px; }
-.card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 400; }
-.card p { font-size: 0.9rem; opacity: 0.8; line-height: 1.5; }
+/* Efeito ao passar o mouse */
+.card:hover { 
+    transform: translateY(-5px); 
+    z-index: 2; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4); 
+}
 
-.card-escuro { background-color: #2c2c2c; }
-.card-marrom { background-color: #6d5b4b; }
-.card-bege { background-color: #b09b89; }
+/* Títulos (Branco para ler melhor no fundo colorido) */
+.card h3 { 
+    font-size: 1.5rem; 
+    margin-bottom: 15px; 
+    font-weight: 400;
+    color: #ffffff; /* Branco */
+}
+
+/* Ícones (Dourado para manter o estilo chique) */
+.card-icon { 
+    font-size: 2rem; 
+    opacity: 1; 
+    margin-bottom: 20px; 
+    color: var(--gold); 
+}
+
+.card p { font-size: 0.9rem; opacity: 0.9; line-height: 1.5; color: #f0f0f0; }
+
+/* --- AS CORES VOLTARAM --- */
+.card-escuro { background-color: #2c2c2c; } /* Cinza Escuro */
+.card-marrom { background-color: #6e5641; } /* Marrom */
+.card-bege   { background-color: #816b58; } /* Bege/Castanho Claro */
+
 
 /* --- FOOTER --- */
 .contato { background: #1b1b1b; color: #fff; padding-top: 80px; }
@@ -149,7 +185,20 @@ section { padding: 80px 0; }
 }
 .redes-sociais .icons a:hover { background: var(--gold); color: #000; }
 
-.mapa { flex: 1; min-height: 300px; border-radius: 5px; overflow: hidden; }
+.mapa { 
+    flex: 1; 
+    min-height: 350px; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 350px; 
+    border: 0;
+}
 
 .footer-bottom { border-top: 1px solid #333; padding: 20px; text-align: center; font-size: 0.8rem; opacity: 0.7; }
 
@@ -180,8 +229,13 @@ section { padding: 80px 0; }
 @media (max-width: 768px) {
     .navbar { flex-direction: column; gap: 15px; }
     .logo { flex-direction: column; text-align: center; }
-    .grid-cards { grid-template-columns: 1fr; } /* Um card por linha */
-    .mapa { min-height: 250px; order: -1; margin-bottom: 30px; } /* Mapa sobe */
+    .grid-cards { grid-template-columns: 1fr; } 
+    
+    .mapa { 
+        min-height: 350px; 
+        order: -1; 
+        margin-bottom: 30px; 
+    } 
 }
 
 /* --- AJUSTES FINOS PARA IPHONE/SAMSUNG PEQUENOS (max-width 480px) --- */
@@ -189,7 +243,7 @@ section { padding: 80px 0; }
     section { padding: 50px 0; }
     .hero { min-height: auto; padding-top: 20px; padding-bottom: 60px; text-align: center; }
     
-    .hero-content h1 { font-size: 1.8rem; margin-bottom: 15px; } /* Fonte menor */
+    .hero-content h1 { font-size: 1.8rem; margin-bottom: 15px; }
     .hero-content p { font-size: 1rem; }
     
     .titulo-praticas h2, .sobre-texto h2, .titulo-contato h2 { 
@@ -197,9 +251,8 @@ section { padding: 80px 0; }
         line-height: 1.1;
     }
     
-    .card { padding: 40px 20px; } /* Menos padding nos cards */
+    .card { padding: 40px 20px; }
     
-    /* Garante que o botão caiba na tela */
     .btn-cta { width: 100%; justify-content: center; } 
     
     .whatsapp-fixed { width: 50px; height: 50px; font-size: 24px; bottom: 15px; right: 15px; }
