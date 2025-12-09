@@ -62,9 +62,45 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: auto; 
 }
 
-.logo { display: flex; align-items: center; }
-.logo-img { height: 50px; }
+/* LOGO E TEXTO */
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; /* Espaço entre a imagem e o texto */
+    cursor: pointer;
+}
 
+.logo-img { 
+    height: 55px; 
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.logo-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo-subtitulo {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+/* LINKS DO MENU */
 .nav-links {
     display: flex;
     gap: 25px;
@@ -243,6 +279,9 @@ section { padding: 80px 0; }
 .titulo-contato h2 { font-size: 2.5rem; margin-bottom: 30px; }
 .lista-contato li { display: flex; gap: 15px; margin-bottom: 20px; align-items: start; }
 .lista-contato i { color: var(--gold); margin-top: 5px; }
+footer {
+    margin-top: auto; 
+}
 
 .redes-sociais .icons { display: flex; gap: 15px; margin-top: 15px; }
 .redes-sociais .icons a {
@@ -309,4 +348,10 @@ section { padding: 80px 0; }
     .mapa { min-height: 350px; order: -1; margin-bottom: 30px; }
     
     .btn-menu-destaque { width: 100%; display: block; }
+
+    /* Ajuste do Logo no Celular */
+    .logo-img { height: 40px; }
+    .logo-titulo { font-size: 1.1rem; }
+    .logo-subtitulo { font-size: 0.6rem; }
+    .logo { gap: 10px; }
 }
