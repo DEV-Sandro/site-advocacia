@@ -1,22 +1,33 @@
 /* --- RESET E VARIÁVEIS --- */
 :root {
-    --gold: #c5a059;
-    --gold-hover: #e0b769;
-    --dark-bg: #1a1a1a;
+    /* Paleta Boss Minimalista Atualizada */
+    --black: #000000;
+    --dark-grey: #2C2C2C;
+    --bronze: #B27A4E;
+    --beige: #DCC59A;
+    --off-white: #EDE9E2;
+    
+    --text-dark: #2C2C2C;
     --text-white: #ffffff;
-    --text-dark: #333333;
-    --light-bg: #f5f5f0;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
     width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
-    background-color: var(--light-bg);
+    background-color: var(--off-white);
     color: var(--text-dark);
     scroll-behavior: smooth;
+}
+
+/* Melhoria: Garante que ao clicar no menu, o título não fique escondido */
+html {
+    scroll-padding-top: 100px;
 }
 
 h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
@@ -48,7 +59,7 @@ a { text-decoration: none; color: inherit; }
     min-height: 70vh; 
     display: flex;
     flex-direction: column;
-    border-bottom: 5px solid var(--gold);
+    border-bottom: 5px solid var(--bronze);
     position: relative;
     padding-bottom: 40px;
 }
@@ -66,7 +77,7 @@ a { text-decoration: none; color: inherit; }
 .logo { 
     display: flex; 
     align-items: center; 
-    gap: 15px; /* Espaço entre a imagem e o texto */
+    gap: 15px; 
     cursor: pointer;
 }
 
@@ -93,7 +104,7 @@ a { text-decoration: none; color: inherit; }
 .logo-subtitulo {
     font-family: 'Lato', sans-serif;
     font-size: 0.75rem;
-    color: var(--gold);
+    color: var(--bronze);
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: 400;
@@ -115,20 +126,7 @@ a { text-decoration: none; color: inherit; }
     letter-spacing: 1px;
     transition: 0.3s;
 }
-.nav-links a:hover { color: var(--gold); }
-
-/* Botão Calcule sua Indenização */
-.btn-menu-destaque {
-    border: 1px solid var(--gold);
-    padding: 10px 20px;
-    border-radius: 4px;
-    color: var(--gold) !important;
-    font-weight: bold;
-}
-.btn-menu-destaque:hover {
-    background-color: var(--gold);
-    color: #000 !important;
-}
+.nav-links a:hover { color: var(--bronze); }
 
 .menu-toggle { display: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
 
@@ -143,8 +141,8 @@ a { text-decoration: none; color: inherit; }
 .hero-content p { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
 
 .btn-cta {
-    background-color: var(--gold);
-    color: #1a1a1a;
+    background-color: var(--bronze);
+    color: #fff;
     padding: 15px 30px;
     border-radius: 4px;
     font-weight: bold;
@@ -153,25 +151,25 @@ a { text-decoration: none; color: inherit; }
     gap: 10px;
     transition: transform 0.2s;
 }
-.btn-cta:hover { transform: scale(1.05); }
+.btn-cta:hover { transform: scale(1.05); background-color: var(--beige); color: #000; }
 
 /* --- SEÇÕES GERAIS --- */
 section { padding: 80px 0; }
-.titulo-praticas { margin-bottom: 50px; border-left: 4px solid var(--gold); padding-left: 20px; }
-.titulo-praticas h2 { font-size: 3rem; color: #333; }
+.titulo-praticas { margin-bottom: 50px; border-left: 4px solid var(--bronze); padding-left: 20px; }
+.titulo-praticas h2 { font-size: 3rem; color: var(--text-dark); }
 
 /* --- DIFERENCIAIS --- */
-.diferenciais { background-color: #fff; }
+.diferenciais { background-color: var(--off-white); }
 
 .diferenciais-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
 }
 
 .card-dif {
     padding: 30px;
-    border: 1px solid #eee;
+    border: 1px solid #dcdcdc;
     text-align: left;
     transition: 0.3s;
     background: #fff;
@@ -179,24 +177,24 @@ section { padding: 80px 0; }
 }
 .card-dif:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-color: var(--gold);
+    border-color: var(--bronze);
     transform: translateY(-5px);
 }
-.card-dif i { font-size: 2rem; color: var(--gold); margin-bottom: 15px; }
-.card-dif h3 { font-size: 1.3rem; margin-bottom: 10px; color: #333; }
+.card-dif i { font-size: 2rem; color: var(--bronze); margin-bottom: 15px; }
+.card-dif h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--dark-grey); }
 .card-dif p { font-size: 0.95rem; color: #666; line-height: 1.5; }
 
 /* --- SOBRE --- */
 .sobre-grid { display: flex; align-items: center; gap: 50px; }
 .sobre-texto { flex: 1; }
-.sobre-texto h2 { font-size: 3rem; margin-bottom: 10px; color: #222; }
-.oab { color: #666; font-size: 1.2rem; margin-bottom: 20px; font-weight: 700; }
-.sobre-texto p { margin-bottom: 15px; text-align: justify; color: #444; }
+.sobre-texto h2 { font-size: 3rem; margin-bottom: 10px; color: var(--black); }
+.oab { color: var(--bronze); font-size: 1.2rem; margin-bottom: 20px; font-weight: 700; }
+.sobre-texto p { margin-bottom: 15px; text-align: justify; color: var(--text-dark); line-height: 1.6; }
 .sobre-img { flex: 1; text-align: center; }
-.sobre-img img { max-width: 100%; border-radius: 5px; background: #000; padding: 20px; }
+.sobre-img img { max-width: 100%; border-radius: 5px; background: var(--dark-grey); padding: 20px; }
 
-/* --- CARDS PRÁTICAS (COLORIDOS CONFORME PEDIDO) --- */
-.praticas { background-color: #f9f9f9; }
+/* --- CARDS PRÁTICAS --- */
+.praticas { background-color: #fff; }
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -215,49 +213,21 @@ section { padding: 80px 0; }
 .card:hover { transform: translateY(-5px); z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
 
 .card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 400; color: #ffffff; }
-.card-icon { font-size: 2rem; opacity: 1; margin-bottom: 20px; color: var(--gold); }
+.card-icon { font-size: 2rem; opacity: 1; margin-bottom: 20px; color: #fff; }
 .card p { font-size: 0.9rem; opacity: 0.9; line-height: 1.5; color: #f0f0f0; }
 
-/* CORES ORIGINAIS */
-.card-escuro { background-color: #2c2c2c; } /* Preto/Cinza */
-.card-marrom { background-color: #6d5b4b; } /* Marrom */
-.card-bege   { background-color: #b09b89; } /* Bege/Castanho Claro */
+.card-escuro { background-color: var(--dark-grey); } 
+.card-bronze { background-color: var(--bronze); } 
+.card-bege   { background-color: var(--beige); color: var(--black) !important; }
 
-/* --- BLOG --- */
-.blog { background-color: #fff; }
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-}
-.blog-card {
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: 0.3s;
-    border: 1px solid #eee;
-}
-.blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-color: var(--gold); }
-.blog-img {
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-}
-.blog-content { padding: 30px; }
-.blog-content h3 { font-size: 1.5rem; color: #333; margin-bottom: 15px; line-height: 1.3; }
-.blog-content p { color: #666; margin-bottom: 25px; font-size: 1rem; line-height: 1.6; }
-.link-blog { 
-    color: var(--gold); 
-    font-weight: bold; 
-    font-size: 0.95rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-}
-.link-blog:hover { color: var(--gold-hover); margin-left: 5px; transition: 0.3s; }
+/* Ajuste de texto para o card claro (Bege) */
+.card-bege h3 { color: var(--black) !important; }
+.card-bege p { color: #333 !important; }
+.card-bege .card-icon { color: var(--black) !important; }
+
 
 /* --- FAQ --- */
-.faq { background-color: #f5f5f0; }
+.faq { background-color: var(--off-white); }
 .faq-lista details {
     background: #fff;
     margin-bottom: 15px;
@@ -267,30 +237,30 @@ section { padding: 80px 0; }
     cursor: pointer;
     transition: 0.3s;
 }
-.faq-lista details[open] { border-left: 5px solid var(--gold); }
-.faq-lista summary { font-weight: bold; color: #333; font-size: 1.1rem; list-style: none; outline: none; }
+.faq-lista details[open] { border-left: 5px solid var(--bronze); }
+.faq-lista summary { font-weight: bold; color: var(--dark-grey); font-size: 1.1rem; list-style: none; outline: none; }
 .faq-lista summary::-webkit-details-marker { display: none; }
 .faq-lista p { margin-top: 15px; color: #555; font-size: 1rem; line-height: 1.6; }
 
 /* --- FOOTER --- */
-.contato { background: #1b1b1b; color: #fff; padding-top: 80px; }
+footer {
+    margin-top: auto; 
+}
+.contato { background: var(--black); color: #fff; padding-top: 80px; }
 .contato-grid { display: flex; gap: 40px; padding-bottom: 40px; }
 .info-contato { flex: 1; }
 .titulo-contato h2 { font-size: 2.5rem; margin-bottom: 30px; }
 .lista-contato li { display: flex; gap: 15px; margin-bottom: 20px; align-items: start; }
-.lista-contato i { color: var(--gold); margin-top: 5px; }
-footer {
-    margin-top: auto; 
-}
+.lista-contato i { color: var(--bronze); margin-top: 5px; }
 
 .redes-sociais .icons { display: flex; gap: 15px; margin-top: 15px; }
 .redes-sociais .icons a {
     width: 45px; height: 45px;
-    border: 1px solid var(--gold); border-radius: 50%;
+    border: 1px solid var(--bronze); border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    color: var(--gold); transition: 0.3s;
+    color: var(--bronze); transition: 0.3s;
 }
-.redes-sociais .icons a:hover { background: var(--gold); color: #000; }
+.redes-sociais .icons a:hover { background: var(--bronze); color: #fff; }
 
 .mapa { 
     flex: 1; 
@@ -302,6 +272,17 @@ footer {
 .mapa iframe { width: 100%; height: 100%; min-height: 350px; border: 0; }
 
 .footer-bottom { border-top: 1px solid #333; padding: 20px; text-align: center; font-size: 0.8rem; opacity: 0.7; }
+
+/* Estilo do seu Link de Desenvolvedor */
+.dev-link {
+    color: inherit;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.dev-link:hover {
+    color: var(--bronze);
+    text-decoration: underline;
+}
 
 .whatsapp-fixed {
     position: fixed;
@@ -320,38 +301,69 @@ footer {
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 992px) {
-    .diferenciais-grid, .grid-cards { grid-template-columns: repeat(2, 1fr); }
+    .diferenciais-grid { grid-template-columns: 1fr; }
+    .grid-cards { grid-template-columns: repeat(2, 1fr); }
     .sobre-grid, .contato-grid { flex-direction: column; }
     .hero-content h1 { font-size: 2.5rem; }
-    .nav-links { display: none; } /* Menu Mobile Ativa aqui */
+    .nav-links { display: none; } 
     .menu-toggle { display: block; }
 }
 
 @media (max-width: 768px) {
-    /* Menu Mobile com Fundo Escuro */
     .nav-links {
         display: none;
         position: absolute;
         top: 80px; left: 0; width: 100%;
-        background: #1a1a1a;
+        background: var(--dark-grey);
         flex-direction: column;
         padding: 30px;
         text-align: center;
         z-index: 999;
-        border-bottom: 2px solid var(--gold);
+        border-bottom: 2px solid var(--bronze);
     }
     .nav-links.active { display: flex; }
     
-    /* Um card por linha no celular */
-    .diferenciais-grid, .grid-cards, .blog-grid { grid-template-columns: 1fr; }
+    .grid-cards { grid-template-columns: 1fr; }
     
     .mapa { min-height: 350px; order: -1; margin-bottom: 30px; }
     
-    .btn-menu-destaque { width: 100%; display: block; }
-
-    /* Ajuste do Logo no Celular */
     .logo-img { height: 40px; }
     .logo-titulo { font-size: 1.1rem; }
     .logo-subtitulo { font-size: 0.6rem; }
     .logo { gap: 10px; }
+}
+
+/* --- RESPONSIVIDADE PARA TELAS GRANDES (MONITORES LARGOS / 4K) --- */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1350px;
+    }
+    .hero {
+        min-height: 80vh;
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 18px; 
+    }
+    .container {
+        max-width: 1600px; 
+    }
+    .hero-content h1 {
+        font-size: 4.5rem; 
+        max-width: 1000px;
+    }
+    .titulo-praticas h2 {
+        font-size: 3.5rem;
+    }
+    .card, .card-dif {
+        padding: 50px 40px;
+    }
+    .card h3, .card-dif h3 {
+        font-size: 1.8rem;
+    }
+    .mapa, .mapa iframe {
+        min-height: 450px;
+    }
 }
