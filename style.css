@@ -1,11 +1,11 @@
 /* --- RESET E VARIÁVEIS --- */
 :root {
-    /* Paleta Boss Minimalista Atualizada */
+    /* Paleta Boss Minimalista Oficial */
     --black: #000000;
-    --dark-grey: #2C2C2C;
-    --bronze: #B27A4E;
-    --beige: #DCC59A;
-    --off-white: #EDE9E2;
+    --dark-grey: #2C2C2C; /* Cinza Escuro */
+    --bronze: #B27A4E;    /* Marrom Médio */
+    --beige: #DCC59A;     /* Bege Dourado (Fundo Cards Práticas) */
+    --off-white: #EDE9E2; /* Fundo Geral */
     
     --text-dark: #2C2C2C;
     --text-white: #ffffff;
@@ -25,7 +25,7 @@ html, body {
     scroll-behavior: smooth;
 }
 
-/* Melhoria: Garante que ao clicar no menu, o título não fique escondido */
+/* Garante que o título não fique escondido pelo menu ao clicar */
 html {
     scroll-padding-top: 100px;
 }
@@ -49,9 +49,9 @@ a { text-decoration: none; color: inherit; }
 
 /* --- HERO (TOPO) --- */
 .hero {
-    /* Imagem local */
-    background: linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.75)), 
-                url('./foto/plano_fundo.jpg'); 
+    /* Ajuste da foto para ficar um pouco mais fraca (película mais escura) */
+    background: linear-gradient(rgba(20, 20, 20, 0.85), rgba(20, 20, 20, 0.75)), 
+                url('./foto/plano_fundo.avif'); 
     background-size: cover;          
     background-position: center;     
     background-attachment: fixed;    
@@ -62,6 +62,11 @@ a { text-decoration: none; color: inherit; }
     border-bottom: 5px solid var(--bronze);
     position: relative;
     padding-bottom: 40px;
+}
+
+/* Sombra no texto para garantir leitura perfeita */
+.hero-content h1, .hero-content p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* --- MENU --- */
@@ -99,6 +104,7 @@ a { text-decoration: none; color: inherit; }
     color: #fff;
     font-weight: 700;
     letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 .logo-subtitulo {
@@ -125,6 +131,7 @@ a { text-decoration: none; color: inherit; }
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: 0.3s;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 .nav-links a:hover { color: var(--bronze); }
 
@@ -138,7 +145,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-content h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
-.hero-content p { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
+.hero-content p { font-size: 1.1rem; margin-bottom: 30px; opacity: 1; }
 
 .btn-cta {
     background-color: var(--bronze);
@@ -150,6 +157,8 @@ a { text-decoration: none; color: inherit; }
     align-items: center;
     gap: 10px;
     transition: transform 0.2s;
+    text-shadow: none; 
+    box-shadow: 0 4px 15px rgba(0,0,0, 0.3);
 }
 .btn-cta:hover { transform: scale(1.05); background-color: var(--beige); color: #000; }
 
@@ -158,7 +167,7 @@ section { padding: 80px 0; }
 .titulo-praticas { margin-bottom: 50px; border-left: 4px solid var(--bronze); padding-left: 20px; }
 .titulo-praticas h2 { font-size: 3rem; color: var(--text-dark); }
 
-/* --- DIFERENCIAIS --- */
+/* --- DIFERENCIAIS (Estilo Original: Branco com Ícone Bronze) --- */
 .diferenciais { background-color: var(--off-white); }
 
 .diferenciais-grid {
@@ -169,20 +178,82 @@ section { padding: 80px 0; }
 
 .card-dif {
     padding: 30px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #b3a385;
     text-align: left;
     transition: 0.3s;
     background: #fff;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
+
 .card-dif:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     border-color: var(--bronze);
     transform: translateY(-5px);
 }
+
 .card-dif i { font-size: 2rem; color: var(--bronze); margin-bottom: 15px; }
-.card-dif h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--dark-grey); }
-.card-dif p { font-size: 0.95rem; color: #666; line-height: 1.5; }
+.card-dif h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark-grey); font-weight: 400; }
+.card-dif p { font-size: 0.95rem; color: #555; line-height: 1.6; }
+
+/* --- PRÁTICAS (Estilo Novo: Inverso dos Diferenciais) --- */
+.praticas { background-color: #fff; }
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* ESTILO UNIFICADO (Bege com Ícone Branco) */
+.card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    transition: 0.3s;
+    border-radius: 8px;
+    
+    /* MUDANÇA: Fundo Bege, Borda Branca */
+    background-color: #8f653d; 
+    border: 2px solid hsl(41, 81%, 11%);
+    color: var(--dark-grey);
+}
+
+.card:hover { 
+    transform: translateY(-5px); 
+    z-index: 2; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    border-color: var(--bronze); 
+}
+
+.card h3 { 
+    font-size: 1.8rem; 
+    margin-bottom: 15px; 
+    font-weight: 400;
+    color: var(--text-white); /* Texto Escuro para ler */
+}
+
+.card-icon { 
+    font-size: 2.2rem; 
+    opacity: 1; 
+    margin-bottom: 20px; 
+    /* MUDANÇA: Ícone Branco */
+    color: #ffffff; 
+    /* Sombra suave no ícone para destacar no bege */
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.15));
+}
+
+.card p { 
+    font-size: 0.95rem; 
+    opacity: 0.95; 
+    line-height: 1.6;
+    color: var(--text-white); /* Texto Escuro para ler */
+}
+
 
 /* --- SOBRE --- */
 .sobre-grid { display: flex; align-items: center; gap: 50px; }
@@ -192,38 +263,6 @@ section { padding: 80px 0; }
 .sobre-texto p { margin-bottom: 15px; text-align: justify; color: var(--text-dark); line-height: 1.6; }
 .sobre-img { flex: 1; text-align: center; }
 .sobre-img img { max-width: 100%; border-radius: 5px; background: var(--dark-grey); padding: 20px; }
-
-/* --- CARDS PRÁTICAS --- */
-.praticas { background-color: #fff; }
-.grid-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-}
-
-.card {
-    padding: 50px 30px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    transition: 0.3s;
-}
-.card:hover { transform: translateY(-5px); z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-
-.card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 400; color: #ffffff; }
-.card-icon { font-size: 2rem; opacity: 1; margin-bottom: 20px; color: #fff; }
-.card p { font-size: 0.9rem; opacity: 0.9; line-height: 1.5; color: #f0f0f0; }
-
-.card-escuro { background-color: var(--dark-grey); } 
-.card-bronze { background-color: var(--bronze); } 
-.card-bege   { background-color: var(--beige); color: var(--black) !important; }
-
-/* Ajuste de texto para o card claro (Bege) */
-.card-bege h3 { color: var(--black) !important; }
-.card-bege p { color: #333 !important; }
-.card-bege .card-icon { color: var(--black) !important; }
 
 
 /* --- FAQ --- */
